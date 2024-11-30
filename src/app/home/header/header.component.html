@@ -6,7 +6,12 @@
   <div class="absolute inset-0 bg-black bg-opacity-50"></div>
 
   <!-- Navigation Bar -->
-  <app-nav-bar></app-nav-bar>
+  <menu
+    [ngClass]="{ scrolled: isScrolled }"
+    class="navbar transition duration-300"
+  >
+    <app-nav-bar></app-nav-bar>
+  </menu>
 
   <!-- Content -->
   <div

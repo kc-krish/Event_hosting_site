@@ -23,9 +23,9 @@
 
       <div>
         <img
-          src="/assets/about-us.jpg"
+          src="https://plus.unsplash.com/premium_photo-1663013035940-15957e859e62?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGJ1c2luZXNzJTIwdGVhbXxlbnwwfHwwfHx8MA%3D%3D"
           alt="About Us"
-          class="rounded-lg shadow-lg"
+          class="rounded-lg shadow-lg scroll_element2"
         />
       </div>
     </div>
@@ -40,19 +40,25 @@
         <div
           class="bg-gray-800 h-[6rem] w-[8rem] flex flex-col justify-center items-center rounded-3xl"
         >
-          <h3 class="text-blue-500 text-4xl font-extrabold">250+</h3>
+          <h3 class="text-blue-500 text-4xl font-extrabold counterElements">
+            {{ eventsHosted + "+" }}
+          </h3>
           <p class="text-gray-400">Events hosted</p>
         </div>
         <div
           class="bg-gray-800 h-[6rem] w-[8rem] flex flex-col justify-center items-center rounded-3xl"
         >
-          <h3 class="text-green-500 text-4xl font-extrabold">1000+</h3>
+          <h3 class="text-green-500 text-4xl font-extrabold counterElements">
+            {{ satisfiedClients + "+" }}
+          </h3>
           <p class="text-gray-400">Satisfied clients</p>
         </div>
         <div
           class="bg-gray-800 h-[6rem] w-[8rem] flex flex-col justify-center items-center rounded-3xl"
         >
-          <h3 class="text-yellow-500 text-4xl font-extrabold">50+</h3>
+          <h3 class="text-yellow-500 text-4xl font-extrabold counterElements">
+            {{ venuesAvailable + "+" }}
+          </h3>
           <p class="text-gray-400">Venues available</p>
         </div>
       </div>

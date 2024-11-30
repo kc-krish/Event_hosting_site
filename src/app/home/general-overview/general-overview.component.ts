@@ -12,6 +12,9 @@ export class GeneralOverviewComponent
 {
   private animations: gsap.core.Tween[] = [];
   screenWidth: any;
+  eventsHosted: number = 0;
+  satisfiedClients: number = 0;
+  venuesAvailable: number = 0;
 
   constructor() {
     gsap.registerPlugin(ScrollTrigger);
@@ -23,6 +26,45 @@ export class GeneralOverviewComponent
 
   ngAfterViewInit(): void {
     this.createAnimations();
+
+    ScrollTrigger.create({
+      trigger: '.scroll_element1',
+      start: 'top 90%',
+      toggleActions: 'play reverse play reverse',
+      invalidateOnRefresh: true,
+      onEnter: () => {
+        this.resetCounter();
+        this.startCounters();
+      },
+    });
+  }
+
+  resetCounter(): void {
+    this.eventsHosted = 0;
+    this.satisfiedClients = 0;
+    this.venuesAvailable = 0;
+  }
+
+  startCounters(): void {
+    this.animateCounter('eventsHosted', 250, 2000);
+    this.animateCounter('satisfiedClients', 1000, 2000);
+    this.animateCounter('venuesAvailable', 50, 2000);
+  }
+
+  animateCounter(
+    propertyName: keyof GeneralOverviewComponent,
+    targetValue: number,
+    duration: number
+  ): void {
+    const startValue = 0;
+    const increment = targetValue / (duration / 20);
+    const interval = setInterval(() => {
+      this[propertyName] += increment; // Increment the property value directly
+      if (this[propertyName] >= targetValue) {
+        this[propertyName] = targetValue; // Ensure it doesn't exceed the target value
+        clearInterval(interval); // Stop the interval
+      }
+    }, 10); // Update every 10ms
   }
 
   createAnimations(): void {
@@ -30,7 +72,9 @@ export class GeneralOverviewComponent
     this.animations = [];
 
     const elements1 = document.querySelectorAll('.scroll_element1');
+    const btn = document.querySelectorAll('.scroll_element1 button');
     const elements2 = document.querySelectorAll('.scroll_element2');
+    // const img = document.querySelectorAll('.scroll_element2 img');
 
     elements1.forEach((el) => {
       const animation = gsap.fromTo(
@@ -86,5 +130,6 @@ export class GeneralOverviewComponent
   ngOnDestroy(): void {
     this.animations.forEach((anim) => anim.kill());
     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    this.resetCounter();
   }
 }
