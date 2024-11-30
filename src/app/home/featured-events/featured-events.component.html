@@ -1,5 +1,5 @@
 <div class="mt-12">
-  <h1 class="text-5xl text-neutral-600 drop-shadow-2xl font-bold text-center">
+  <h1 class="text-5xl text-[#FFFFFF] drop-shadow-2xl font-bold text-center">
     Featured Events
   </h1>
   <section class="flex justify-center mt-6 relative">
@@ -12,14 +12,16 @@
     <div class="h-[28rem] w-[80%] flex justify-around overflow-hidden py-2">
       <article
         *ngFor="let event of featuredEvents"
-        class="w-[30%] bg-red-300 mx-5 flex-shrink-0 rounded-3xl animationClass"
+        class="w-[30%] bg-[#2A2A2A] border-2 border-[#333333] mx-5 flex-shrink-0 rounded-3xl animationClass"
         [style.transform]="'translateX(-' + currentIndex * 110 + '%)'"
       >
         <div class="p-5 text-center">
-          <h3 class="font-bold text-[1.3rem]">{{ event.title }}</h3>
+          <h3 class="font-bold text-[1.3rem] text-[#E0E0E0]">
+            {{ event.title }}
+          </h3>
           <img [src]="event.image" alt="" srcset="" class="rounded-3xl py-3" />
-          <p class="font-semibold">{{ event.date }}</p>
-          <p>{{ event.description }}</p>
+          <p class="font-semibold text-[#B0BEC5]">{{ event.date }}</p>
+          <p class="text-[#B0BEC5]">{{ event.description }}</p>
         </div>
       </article>
     </div>

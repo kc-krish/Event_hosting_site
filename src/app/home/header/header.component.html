@@ -2,18 +2,30 @@
   class="relative h-screen bg-cover bg-center"
   style="background-image: url('/images/hero-img.jpg')"
 >
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+  <!-- Navigation Bar -->
   <app-nav-bar></app-nav-bar>
+
+  <!-- Content -->
   <div
-    class="absolute inset-0 flex flex-col justify-center items-center text-center text-neutral-600"
+    class="absolute inset-0 flex flex-col justify-center items-center text-center text-white"
   >
-    <h1 class="text-5xl font-bold drop-shadow-2xl">
-      Create Memories with EventSphere
+    <!-- Title -->
+    <h1 class="text-6xl font-extrabold drop-shadow-lg">
+      Create Memories with <span class="text-blue-500">EventSphere</span>
     </h1>
-    <p class="mt-4 text-lg font-medium drop-shadow-2xl">
-      Your gateway to unforgettable events. Discover, book, and enjoy!
+
+    <!-- Subtitle -->
+    <p class="mt-4 text-xl font-light text-gray-300 max-w-3xl">
+      Your gateway to unforgettable events. Discover, book, and enjoy every
+      moment with ease.
     </p>
+
+    <!-- Call-to-Action Button -->
     <button
-      class="mt-6 bg-blue-500 px-6 py-3 rounded-xl text-lg font-semibold hover:bg-blue-600 text-white"
+      class="mt-6 bg-blue-500 px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:bg-blue-600 hover:shadow-xl transition duration-300"
     >
       Explore Events
     </button>
