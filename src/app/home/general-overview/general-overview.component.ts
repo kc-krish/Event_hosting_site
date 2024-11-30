@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -7,11 +7,18 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
   templateUrl: './general-overview.component.html',
   styleUrl: './general-overview.component.css',
 })
-export class GeneralOverviewComponent implements AfterViewInit, OnDestroy {
+export class GeneralOverviewComponent
+  implements OnInit, AfterViewInit, OnDestroy
+{
   private animations: gsap.core.Tween[] = [];
+  screenWidth: any;
 
   constructor() {
     gsap.registerPlugin(ScrollTrigger);
+  }
+
+  ngOnInit(): void {
+    this.screenWidth = window.innerWidth;
   }
 
   ngAfterViewInit(): void {
