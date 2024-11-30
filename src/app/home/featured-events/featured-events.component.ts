@@ -64,6 +64,8 @@ export class FeaturedEventsComponent implements OnInit, OnDestroy {
     } else {
       this.currentIndex = 2;
     }
+    this.stopAutoplay();
+    this.startAutoplay();
   }
 
   nextSlide() {
@@ -72,6 +74,8 @@ export class FeaturedEventsComponent implements OnInit, OnDestroy {
     } else {
       this.currentIndex = 0;
     }
+    this.stopAutoplay();
+    this.startAutoplay();
   }
 
   ngOnInit() {
