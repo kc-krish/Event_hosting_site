@@ -1,1 +1,34 @@
-<p>featured-events works!</p>
+<div class="mt-12">
+  <h1 class="text-5xl text-neutral-600 drop-shadow-2xl font-bold text-center">
+    Featured Events
+  </h1>
+  <section class="flex justify-center mt-6 relative">
+    <button
+      (click)="prevSlide()"
+      class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-500 text-white p-3 rounded-full"
+    >
+      &#10094;
+    </button>
+    <div class="h-[28rem] w-[80%] flex justify-around overflow-hidden py-2">
+      <article
+        *ngFor="let event of featuredEvents"
+        class="w-[30%] bg-red-300 mx-5 flex-shrink-0 rounded-3xl animationClass"
+        [style.transform]="'translateX(-' + currentIndex * 110 + '%)'"
+      >
+        <div class="p-5 text-center">
+          <h3 class="font-bold text-[1.3rem]">{{ event.title }}</h3>
+          <img [src]="event.image" alt="" srcset="" class="rounded-3xl py-3" />
+          <p class="font-semibold">{{ event.date }}</p>
+          <p>{{ event.description }}</p>
+        </div>
+      </article>
+    </div>
+    <button
+      (click)="nextSlide()"
+      class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-500 text-white p-3 rounded-full"
+    >
+      &#10095;
+      <!-- Right arrow -->
+    </button>
+  </section>
+</div>
