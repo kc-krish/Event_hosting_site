@@ -9,6 +9,8 @@ import { HeaderComponent } from './home/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FeaturedEventsComponent } from './home/featured-events/featured-events.component';
 import { GeneralOverviewComponent } from './home/general-overview/general-overview.component';
+import { GalleryComponent } from './home/gallery/gallery.component';
+import { LightboxModule } from 'ngx-lightbox';
 
 @NgModule({
   declarations: [
@@ -18,8 +20,9 @@ import { GeneralOverviewComponent } from './home/general-overview/general-overvi
     HomeComponent,
     FeaturedEventsComponent,
     GeneralOverviewComponent,
+    GalleryComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, MatCardModule],
+  imports: [BrowserModule, AppRoutingModule, MatCardModule, LightboxModule],
   providers: [],
   bootstrap: [AppComponent],
 })

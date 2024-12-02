@@ -1,0 +1,19 @@
+<article class="gallery flex flex-col justify-center items-center my-[2rem]">
+  <h2 class="text-4xl font-bold text-white mb-[2rem]">Our Gallery</h2>
+  <div
+    class="grid grid-flow-row grid-cols-3 auto-rows-fr gap-10 h-[75rem] w-[75vw]"
+  >
+    <mat-card
+      *ngFor="let img of images; let i = index"
+      class="relative h-full"
+      (click)="open(i)"
+    >
+      <img
+        mat-card-image
+        class="h-full w-full object-cover"
+        [src]="img.src"
+        [ngClass]="{ rightImg: i === 2 || i === 5 || i === 8 || i === 11 }"
+      />
+    </mat-card>
+  </div>
+</article>
