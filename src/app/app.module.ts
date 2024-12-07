@@ -11,6 +11,8 @@ import { FeaturedEventsComponent } from './home/featured-events/featured-events.
 import { GeneralOverviewComponent } from './home/general-overview/general-overview.component';
 import { GalleryComponent } from './home/gallery/gallery.component';
 import { LightboxModule } from 'ngx-lightbox';
+import { ReviewsComponent } from './home/reviews/reviews.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,15 @@ import { LightboxModule } from 'ngx-lightbox';
     FeaturedEventsComponent,
     GeneralOverviewComponent,
     GalleryComponent,
+    ReviewsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, MatCardModule, LightboxModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MatCardModule,
+    LightboxModule,
+    CarouselModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

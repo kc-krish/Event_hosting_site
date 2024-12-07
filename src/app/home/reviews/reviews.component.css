@@ -1,0 +1,8 @@
+.review-box {
+  background: linear-gradient(135deg, #2a2a2a, #1a1f36);
+}
+
+.animationClass {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}

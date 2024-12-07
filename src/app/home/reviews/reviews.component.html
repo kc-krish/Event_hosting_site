@@ -1,0 +1,39 @@
+<article class="m-[4rem] flex flex-col gap-5 justify-center items-center">
+  <h1 class="text-4xl font-bold text-[#FFFFFF] reviewTitle">
+    What our clients say
+  </h1>
+  <div
+    class="review-box flex relative justify-between flex-shrink-0 p-[2rem] gap-[4rem] h-[15rem] w-[45rem] rounded-3xl overflow-hidden reviewBox"
+  >
+    <button
+      class="absolute left-5 z-[100] top-1/2 transform -translate-y-1/2 bg-gray-500 text-white p-3 rounded-full"
+      (click)="prevReview()"
+    >
+      &#10094;
+    </button>
+    <div class="flex items-center justify-center">
+      <div
+        class="w-[40rem] flex flex-col justify-center items-center animationClass"
+        *ngFor="let review of reviews"
+        [style.transform]="'translateX(-' + currentIndex * 40 + 'rem)'"
+      >
+        <img
+          [src]="review.photo"
+          class="w-20 h-20 rounded-full mb-4"
+          alt="{{ review.name }}"
+        />
+        <h4 class="text-xl font-bold text-blue-400 mb-3">{{ review.name }}</h4>
+        <p class="text-gray-300 italic w-[30rem] text-center">
+          {{ review.text }}
+        </p>
+        <p class="text-sm text-gray-500 mt-2">{{ review.date }}</p>
+      </div>
+    </div>
+    <button
+      class="absolute right-5 z-[100] top-1/2 transform -translate-y-1/2 bg-gray-500 text-white p-3 rounded-full"
+      (click)="nextReview()"
+    >
+      &#10095;
+    </button>
+  </div>
+</article>
