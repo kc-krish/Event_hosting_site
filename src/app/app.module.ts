@@ -16,6 +16,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FaqsComponent } from './home/faqs/faqs.component';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { ContactComponent } from './home/contact/contact.component';
+import { FooterComponent } from './home/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     GalleryComponent,
     ReviewsComponent,
     FaqsComponent,
+    ContactComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
