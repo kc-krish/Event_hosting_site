@@ -79,21 +79,19 @@ export class FeaturedEventsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.startAutoplay(); // Start autoplay when the component loads
+    this.startAutoplay();
   }
 
   ngOnDestroy() {
-    this.stopAutoplay(); // Stop the timer when the component is destroyed
+    this.stopAutoplay();
   }
 
-  // Start autoplay
   startAutoplay() {
     this.autoplayInterval = setInterval(() => {
-      this.nextSlide(); // Move to the next slide at regular intervals
-    }, 3000); // Change slide every 3 seconds
+      this.nextSlide();
+    }, 3000);
   }
 
-  // Stop autoplay
   stopAutoplay() {
     if (this.autoplayInterval) {
       clearInterval(this.autoplayInterval);

@@ -1,33 +1,43 @@
-<div class="mt-12">
-  <h1 class="text-5xl text-[#FFFFFF] drop-shadow-2xl font-bold text-center">
+<div class="mt-[2rem] w-full box-border">
+  <h1 class="text-4xl dark:text-headerText font-bold text-center">
     Featured Events
   </h1>
-  <section class="flex justify-center mt-6 relative">
+  <section class="w-full flex justify-center items-center relative mt-[1rem]">
     <button
       (click)="prevSlide()"
-      class="absolute left-[8.5rem] z-[100] top-1/2 transform -translate-y-1/2 bg-gray-500 text-white p-3 rounded-full"
+      class="absolute left-[8rem] z-[100] top-1/2 transform -translate-y-1/2 dark:bg-buttonbg dark:hover:bg-buttonsHover dark:headerText p-3 rounded-full"
     >
       &#10094;
     </button>
-    <div class="h-[28rem] w-[80%] flex justify-around overflow-hidden py-2">
+    <div class="flex w-[80%] h-[30rem] gap-[1.5rem] p-[1rem] overflow-hidden">
       <article
-        *ngFor="let event of featuredEvents"
-        class="w-[30%] bg-[#2A2A2A] border-2 border-[#333333] mx-5 flex-shrink-0 rounded-3xl animationClass"
-        [style.transform]="'translateX(-' + currentIndex * 110 + '%)'"
+        *ngFor="let event of featuredEvents; let i = index"
+        class="flex-shrink-0 dark:bg-secondary rounded-3xl animationClass hover:scale-90 hover:dark:bg-secondaryHover hover:cursor-pointer"
+        [style.width]="'calc((100% - 3rem) / 3)'"
+        [style.transform]="'translateX(-' + currentIndex * 106.43 + '%)'"
       >
-        <div class="p-5 text-center">
-          <h3 class="font-bold text-[1.3rem] text-[#E0E0E0]">
-            {{ event.title }}
-          </h3>
-          <img [src]="event.image" alt="" srcset="" class="rounded-3xl py-3" />
-          <p class="font-semibold text-[#B0BEC5]">{{ event.date }}</p>
-          <p class="text-[#B0BEC5]">{{ event.description }}</p>
+        <div class="transfor hover:scale-110">
+          <div class="p-5 text-center">
+            <h3 class="font-bold text-[1.3rem] dark:text-headerText">
+              {{ event.title }}
+            </h3>
+            <img
+              [src]="event.image"
+              alt=""
+              srcset=""
+              class="rounded-3xl py-3"
+            />
+            <p class="font-semibold dark:text-secondaryText">
+              {{ event.date }}
+            </p>
+            <p class="text-secondaryText pt-5">{{ event.description }}</p>
+          </div>
         </div>
       </article>
     </div>
     <button
       (click)="nextSlide()"
-      class="absolute right-[8.5rem] z-[100] top-1/2 transform -translate-y-1/2 bg-gray-500 text-white p-3 rounded-full"
+      class="absolute right-[8rem] z-[100] top-1/2 transform -translate-y-1/2 dark:bg-buttonbg dark:hover:bg-buttonsHover dark:headerText p-3 rounded-full"
     >
       &#10095;
     </button>
