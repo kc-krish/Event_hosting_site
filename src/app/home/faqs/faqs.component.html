@@ -1,0 +1,43 @@
+<section class="faq mt-14 flex flex-col justify-center items-center">
+  <h2 class="text-4xl font bold text-white">
+    Got Questions? We've Got <span class="text-blue-400">Answers!</span>
+  </h2>
+
+  <div
+    class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-6 mt-[3rem]"
+  >
+    <article>
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let faq of faqs.slice(0, 5)">
+          <mat-expansion-panel-header class="mb-[3rem]">
+            <mat-panel-title
+              class="text-lg font-bold text-white relative pt-[.5rem]"
+            >
+              {{ faq.question }}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p class="text-gray-400 mt-[-1.5rem]">
+            {{ faq.answer }}
+          </p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </article>
+
+    <article>
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let faq of faqs.slice(5)">
+          <mat-expansion-panel-header class="mb-[3rem]">
+            <mat-panel-title
+              class="text-lg font-bold text-white relative pt-[.5rem]"
+            >
+              {{ faq.question }}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p class="text-gray-400 mt-[-1.5rem]">
+            {{ faq.answer }}
+          </p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </article>
+  </div>
+</section>

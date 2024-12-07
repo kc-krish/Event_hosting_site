@@ -116,8 +116,8 @@ export class ReviewsComponent implements AfterViewInit, OnDestroy {
         ease: 'power2.out',
         scrollTrigger: {
           trigger: reviewTitle,
-          start: 'top 95%',
-          end: 'bottom 20%',
+          start: 'top 85%',
+          end: 'bottom 10%',
           toggleActions: 'play reverse play reverse',
           invalidateOnRefresh: true,
         },
@@ -138,8 +138,8 @@ export class ReviewsComponent implements AfterViewInit, OnDestroy {
         ease: 'power2.out',
         scrollTrigger: {
           trigger: reviewBox,
-          start: 'top 95%',
-          end: 'bottom 20%',
+          start: 'top 85%',
+          end: 'bottom 10%',
           toggleActions: 'play reverse play reverse',
           invalidateOnRefresh: false,
         },

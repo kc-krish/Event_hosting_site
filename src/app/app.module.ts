@@ -13,6 +13,9 @@ import { GalleryComponent } from './home/gallery/gallery.component';
 import { LightboxModule } from 'ngx-lightbox';
 import { ReviewsComponent } from './home/reviews/reviews.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FaqsComponent } from './home/faqs/faqs.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     GeneralOverviewComponent,
     GalleryComponent,
     ReviewsComponent,
+    FaqsComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +35,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     MatCardModule,
     LightboxModule,
     CarouselModule,
+    BrowserAnimationsModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
